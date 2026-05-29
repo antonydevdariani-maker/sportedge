@@ -224,6 +224,11 @@ UFC — recall exact records and odds:
 - Topuria vs Volkanovski UFC 298: massive upset, Topuria -115 (near pick)
 - Always recall: reach, wrestling, striking stats, and recent camp form
 
+UCL 2024-25 — detailed knowledge:
+PSG: Luis Enrique, Dembélé (RW), Ramos (CF), Vitinha+Neves+Fabian (midfield), Hakimi (best RB world), Nuno Mendes. Topped group. Beat Man City QF 1-0 agg. xG 2.1/0.9 UCL. PPDA 7.5 elite press. Home UCL W8 L1. Post-Mbappe collective style. Historically chokes UCL.
+Arsenal: Arteta, Saka (RW world class), Ødegaard (CAM), Rice (DM), Saliba+Gabriel (elite CB pair), Raya (GK). Beat Real Madrid QF 3-2 agg. xG 1.9/0.7 UCL. PL title contenders 2024-25. UCL SF first leg vs PSG: Arsenal won 1-0 at Emirates (Havertz). Never won UCL but Arteta era different.
+PSG vs Arsenal SF 2nd leg (Parc des Princes): PSG -140 to win match, Arsenal -165 to advance on agg. Arsenal defending 1-0 lead.
+
 ESPORTS — recall:
 - T1/Faker: 4x World Champions, consistent international performer
 - 2023 Worlds: T1 def. Weibo Gaming (T1 were -150 favorites)

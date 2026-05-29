@@ -40,7 +40,45 @@ Return ONLY raw JSON, no markdown, no backticks:
 }
 
 edge = yes_probability minus polymarket_price (negative = NO has value).
-verdict MUST be PASS when: confidence low, OR abs(edge) < 0.07, OR research thin/conflicting.`
+verdict MUST be PASS when: confidence low, OR abs(edge) < 0.07, OR research thin/conflicting.
+
+═══ UCL 2024-25 DEEP KNOWLEDGE BASE ═══
+
+PSG 2024-25 PROFILE:
+- Manager: Luis Enrique (2nd season). System: high-press, positional play, no-superstar collective
+- Post-Mbappe: Dembélé (RW, elite dribbler, 20+ goal contributions), Gonçalo Ramos (CF, 15 goals), Vitinha (CM, engine), Fabian Ruiz (CM), João Neves (CM, signed 2024, excellent), Lee Kang-in (AM), Hakimi (RB, best in world at position), Nuno Mendes (LB)
+- Ligue 1 2024-25: dominant, ~85 pts pace, +60 goal differential
+- UCL 2024-25: topped group, beat Man City in QF (1-0 agg), reached SF
+- xG per 90 in UCL: ~2.1 for, ~0.9 against — elite numbers
+- Pressing intensity: PPDA ~7.5 (top 5% in Europe)
+- Home record Parc des Princes UCL: W8 L1 last 9 (only loss was 2023 vs Dortmund)
+- Weakness: Dembélé inconsistency, Ramos prone to dry spells, exposed by elite high lines
+- PSG historically chokes in UCL big moments — cultural pressure point
+
+ARSENAL 2024-25 PROFILE:
+- Manager: Mikel Arteta (4th full season). System: high-press, 4-3-3, aggressive defensive line
+- Key players: Bukayo Saka (RW, world class, 20+ G/A), Martin Ødegaard (CAM, captain, elite vision), Leandro Trossard (LW), Kai Havertz (CF, 14 goals), Declan Rice (DM, engine), Thomas Partey (CM), Gabriel Magalhães + Saliba (CB pair, best in PL), David Raya (GK)
+- PL 2024-25: title race with Man City, ~82 pts pace, +45 goal differential
+- UCL 2024-25: topped group, beat Real Madrid in QF (3-2 on agg — massive result)
+- xG per 90 UCL: ~1.9 for, ~0.7 against — elite defensive numbers
+- Pressing PPDA: ~8.1 — slightly less intense than PSG but more organised defensively
+- Away UCL record 2024-25: W3 D1 L0 — excellent travelers
+- Saka injury risk: slight hamstring concern reported pre-SF first leg
+- Arsenal have never won UCL — "choking in big moments" narrative but Arteta era has broken this
+
+HEAD-TO-HEAD PSG vs ARSENAL UCL SF 2024-25:
+- First leg at Emirates: Arsenal won 1-0 (Havertz 67') — tight, PSG dominated possession but Arsenal clinical on counter
+- Second leg at Parc des Princes: PSG must score to advance, Arsenal defend lead
+- Tactical key: Arsenal's defensive block (Saliba/Gabriel) vs Dembélé/Ramos; PSG press vs Rice/Ødegaard
+- Vegas second leg odds: PSG -140 to win the match (need 2+ goals), Arsenal +380 to win on night, draw +260
+- Aggregate odds to advance: Arsenal -165, PSG +140
+- Betting market heavily favors Arsenal to reach final on aggregate
+
+GENERAL UCL 2024-25 CONTEXT:
+- Other SF: Inter Milan vs Barcelona — Inter slight favorites
+- Final: June 2025 in Munich
+- Arsenal momentum: beat Real Madrid in QF — biggest scalp of tournament
+- PSG momentum: beat Man City — also impressive but City was below peak form`
 
 async function callGroq(
   question: string,
