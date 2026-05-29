@@ -206,6 +206,7 @@ interface BacktestResult {
   correct: boolean
   yes_probability: number
   confidence: string
+  sport?: string
   reasoning: string
   key_factors: string[]
   endDate: string
@@ -220,10 +221,25 @@ interface BacktestData {
   results: BacktestResult[]
 }
 
+const SPORT_FILTERS = [
+  { key: 'All', emoji: '🏆' },
+  { key: 'NBA', emoji: '🏀' },
+  { key: 'NFL', emoji: '🏈' },
+  { key: 'MLB', emoji: '⚾' },
+  { key: 'NHL', emoji: '🏒' },
+  { key: 'Soccer', emoji: '⚽' },
+  { key: 'Tennis', emoji: '🎾' },
+  { key: 'UFC', emoji: '🥊' },
+  { key: 'Esports', emoji: '🎮' },
+  { key: 'NCAAB', emoji: '🏫' },
+  { key: 'CFB', emoji: '🎓' },
+]
+
 function BacktestPanel() {
   const [data, setData] = useState<BacktestData | null>(null)
   const [running, setRunning] = useState(false)
   const [count, setCount] = useState(10)
+  const [sport, setSport] = useState('All')
   const [error, setError] = useState<string | null>(null)
 
   async function runBacktest() {
@@ -234,7 +250,7 @@ function BacktestPanel() {
       const res = await fetch('/api/backtest', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ count }),
+        body: JSON.stringify({ count, sport }),
       })
       const d = await res.json()
       if (d.error) { setError(d.error); return }
@@ -256,9 +272,9 @@ function BacktestPanel() {
         <div>
           <h2 className="text-white font-bold text-lg flex items-center gap-2">
             🧪 Backtest
-            <span className="text-xs font-normal text-zinc-500">AI predicts past resolved games without knowing results</span>
+            <span className="text-xs font-normal text-zinc-500">AI predicts 110+ real historical games with web research</span>
           </h2>
-          <p className="text-zinc-600 text-xs mt-1">Tests prediction accuracy on real Polymarket markets that already resolved</p>
+          <p className="text-zinc-600 text-xs mt-1">NBA · NFL · MLB · NHL · Soccer · Tennis · UFC · Esports · NCAAB · CFB</p>
         </div>
         <div className="flex items-center gap-3">
           <select
@@ -267,7 +283,7 @@ function BacktestPanel() {
             disabled={running}
             className="bg-zinc-800 border border-zinc-700 text-zinc-300 text-sm rounded-lg px-3 py-1.5"
           >
-            {[5, 10, 15, 20].map(n => <option key={n} value={n}>{n} games</option>)}
+            {[5, 10, 15, 20, 25, 30].map(n => <option key={n} value={n}>{n} games</option>)}
           </select>
           <button
             onClick={runBacktest}
@@ -286,6 +302,25 @@ function BacktestPanel() {
             ) : '▶ Run Backtest'}
           </button>
         </div>
+      </div>
+
+      {/* Sport filter pills */}
+      <div className="flex flex-wrap gap-2">
+        {SPORT_FILTERS.map(f => (
+          <button
+            key={f.key}
+            onClick={() => setSport(f.key)}
+            disabled={running}
+            className="px-3 py-1 rounded-full text-xs font-medium transition-all disabled:opacity-40"
+            style={{
+              backgroundColor: sport === f.key ? '#1e3a5f' : '#18181b',
+              color: sport === f.key ? '#93c5fd' : '#71717a',
+              border: `1px solid ${sport === f.key ? '#2563eb' : '#27272a'}`,
+            }}
+          >
+            {f.emoji} {f.key}
+          </button>
+        ))}
       </div>
 
       {running && (
@@ -366,6 +401,7 @@ function BacktestPanel() {
                   <div className="flex items-center gap-2 mb-1.5 flex-wrap">
                     <span className="text-lg">{r.correct ? '✅' : '❌'}</span>
                     <span className="text-white text-sm font-medium line-clamp-1 flex-1">{r.question}</span>
+                    {r.sport && <span className="text-xs px-2 py-0.5 rounded-full bg-zinc-800 text-zinc-400">{r.sport}</span>}
                     <span className={`text-xs px-2 py-0.5 rounded-full ${
                       r.confidence === 'high' ? 'bg-emerald-900/50 text-emerald-400' :
                       r.confidence === 'medium' ? 'bg-amber-900/50 text-amber-400' :
